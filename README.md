@@ -21,11 +21,10 @@ This is a personal portfolio website showcasing my skills, projects, and achieve
 - **Bootstrap**
 
 ## Clone the repository to your local machine:
-
-    ```bash
+1. 
+     ```bash
     https://github.com/Ketan-Chaudhary/Portfolio.git
-    ```
-
+     
 ## Contributing
 If you would like to contribute to this project or report any issues, please open an issue or create a pull request.
 
