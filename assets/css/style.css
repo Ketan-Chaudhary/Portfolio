@@ -11297,6 +11297,9 @@ p {
   .blog-link-m {
     margin: 1.3rem;
   }
+  .text-right{
+    text-align: center !important;
+  }
 }
 
 pre {
