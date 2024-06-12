@@ -3212,7 +3212,7 @@ p {
 
 .tech-card {
     position: relative;
-    min-height: 230px;
+    min-height: 130px;
     border: 1px solid #dee2e6;
     overflow: hidden;
     border-radius: 3px
@@ -3224,7 +3224,7 @@ p {
 
 .tech-card .body img.icon {
     margin-top: 40px;
-    width: 55px;
+    width: 35px;
     margin-bottom: 25px;
     -webkit-transition: all, .3s;
     transition: all, .3s
@@ -3255,6 +3255,12 @@ p {
     .tech-card .body .subtitle {
         -webkit-transition: none;
         transition: none
+    }
+}
+
+@media (max-width:991.98px){
+    .md-tech{
+        width:25%;
     }
 }
 
