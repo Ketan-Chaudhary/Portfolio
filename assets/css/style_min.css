@@ -3268,11 +3268,12 @@ p {
     .title {
         font-size: calc(11px + (20 - 15) * ((100vw - 300px)/ (1300 - 300)));
     }
+
     .tech-card .body img.icon {
         margin-top: 0;
     }
 
-    .tech-card{
+    .tech-card {
         min-height: 50px;
     }
 }
@@ -3305,8 +3306,8 @@ p {
 }
 
 .blog-col:hover {
-    transform: scale(1.1);
-    transition: .8s ease
+    transform: scale(1.04);
+    transition: .3s ease-in
 }
 
 .blog-card-header {
@@ -3393,7 +3394,8 @@ p {
     }
 
     .blog-btm {
-        display: inline-block !important
+        display: inline-block !important;
+        
     }
 
     .blog-link-m {
@@ -3402,6 +3404,24 @@ p {
 
     .text-right {
         text-align: center !important
+    }
+
+    .blog-col:hover {
+        transform: scale(1);
+        transition: .3s ease-in
+    }
+
+    .blog-btm-bd1{
+        font-size: small;
+    }
+    .blog-btm-bd2{
+        flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    }
+
+    .blog-btm-bd2>a{
+        font-size: x-small;
     }
 }
 
