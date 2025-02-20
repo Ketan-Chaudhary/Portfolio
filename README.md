@@ -29,5 +29,3 @@ This is a personal portfolio website showcasing my skills, projects, and achieve
      
 ## Contributing
 If you would like to contribute to this project or report any issues, please open an issue or create a pull request.
-
-This version mentions the technologies as requested. Feel free to adjust it further if needed!
