@@ -3325,7 +3325,7 @@ p {
 }
 
 .blog-card-body {
-    padding: 30px 20px 30px 30px
+    padding: 30px 20px 30px 20px
 }
 
 .blog-card-title {
@@ -3395,7 +3395,7 @@ p {
 
     .blog-btm {
         display: inline-block !important;
-        
+
     }
 
     .blog-link-m {
@@ -3411,16 +3411,17 @@ p {
         transition: .3s ease-in
     }
 
-    .blog-btm-bd1{
+    .blog-btm-bd1 {
         font-size: small;
     }
-    .blog-btm-bd2{
+
+    .blog-btm-bd2 {
         flex-wrap: wrap;
-    align-content: center;
-    justify-content: flex-end;
+        align-content: center;
+        justify-content: flex-end;
     }
 
-    .blog-btm-bd2>a{
+    .blog-btm-bd2>a {
         font-size: x-small;
     }
 }
@@ -4539,4 +4540,126 @@ p {
         display: block;
         color: #6c757d;
     }
+}
+
+
+
+/* Project Details */
+.project-details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.project-details h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Tooltip */
+.tech-icon {
+    position: relative;
+}
+
+.tech-icon::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tech Icons */
+.tech-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.tech-icons i {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons i:hover {
+    transform: scale(1.2);
+}
+
+/* Tooltip */
+.tech-icons i {
+    position: relative;
+}
+
+.tech-icons i::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.tech-icons i:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+/* Blog Card Image */
+.blog-card-img {
+    width: 90%;
+    height: 250px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    border-radius: 8px;
+    /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.blog-card-img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Add shadow on hover */
+}
+
+/* Blog Card Header */
+.blog-card-header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }

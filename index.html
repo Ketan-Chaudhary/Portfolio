@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <link rel="stylesheet" href="assets/css/style_min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <!-- icon by Icons8 -->
 </head>
 
@@ -218,167 +224,316 @@
 
     <!-- Project section -->
     <section class="section" id="projects">
-        <!-- container -->
         <div class="container text-center" id="container-project">
             <p class="section-subtitle">Recent Projects</p>
             <h6 class="section-title mb-6">Projects</h6>
-            <!-- project-wrapper -->
 
-            <div class="blog-col section-m">
+            <!-- Project 1: AgriHealthAnalyzer -->
+            <div class="blog-col section-m" data-aos="fade-up">
                 <div class="blog-card">
                     <div class="blog-card-body">
-                        <h5 class="blog-card-title">Crypto Dashboard-React.js</h6>
-
-                            <p class="blog-card-caption">
-                                <a href="#">Contributors: Admin</a>
-                            </p>
+                        <h5 class="blog-card-title">AgriHealthAnalyzer</h5>
+                        <!-- <p class="blog-card-caption">
+                            <a href="#">Contributors: Ketan Chaudhary</a>
+                        </p> -->
+                        <p>
+                            AgriHealthAnalyzer is a Node.js and React-based application that detects crop diseases and
+                            provides information about their prevention using the Plant.id API. The application allows
+                            users to upload images of crops, which are then analyzed to assess their health.
+                        </p>
+                        <div class="project-details">
+                            <h6 class="mt-3">Problem Statement</h6>
                             <p>
-                                Welcome to the Crypto Dashboard repository! This project is a web application developed
-                                using React, Chakra UI, and React Icons. The main features of this project include
-                                multiple pages for different functionalities, responsive design using Chakra UI, and
-                                intuitive navigation with React Router.</p>
-
+                                Farmers often struggle to identify crop diseases early, leading to significant crop
+                                loss. This project aims to provide a tool for early detection and prevention of crop
+                                diseases.
+                            </p>
+                            <h6 class="mt-3">Features</h6>
+                            <ul>
+                                <li>Upload images of crops for health assessment.</li>
+                                <li>Provides detailed information about detected diseases, including treatments and
+                                    causes.</li>
+                                <li>User-friendly interface built with React and Tailwind CSS.</li>
+                                <li>Uses multer for image upload handling.</li>
+                                <li>Implements Axios for API calls to the Plant.id health assessment service.</li>
+                            </ul>
+                            <h6 class="mt-3">Technologies Used</h6>
+                            <div class="tech-icons">
+                                <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+                                <i class="devicon-react-original colored" title="React.js"></i>
+                                <i class="devicon-express-original colored" title="Express.js"></i>
+                                <i class="devicon-tailwindcss-plain colored" title="Tailwind CSS"></i>
+                                <i class="devicon-axios-plain colored" title="Axios"></i>
+                            </div>
+                            <h6 class="mt-3">Installation</h6>
+                            <pre><code>
+  git clone https://github.com/Ketan-Chaudhary/AgriHealthAnalyzer.git
+  cd AgriHealthAnalyzer
+  npm install
+  node server.js
+              </code></pre>
+                        </div>
                     </div>
                     <div class="blog-card-header">
-                        <img src="assets/imgs/project-3.png" class="blog-card-img" alt="">
-
+                        <img src="assets/imgs/project-1.png" class="blog-card-img" alt="AgriHealthAnalyzer">
                     </div>
-
                 </div>
                 <div class="blog-btm" style="display: flex; margin: auto;">
-                    <div class="blog-btm-bd1">
-                        <b>Programming Languages used- HTML, CSS, Java Script (React).</b>
-
-                    </div>
                     <div class="blog-btm-bd2" style="display: flex; margin: auto;">
-
-                        <a href=https://github.com/Ketan-Chaudhary/Crypto-Dashboard.git
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">GitHub <i class="ti-github"></i></a>
-                        <a href="https://crypto-dashboard-teal-one.vercel.app"
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">Demo
-                            <i class="ti-new-window"></i></a>
+                        <a href="https://github.com/Ketan-Chaudhary/AgriHealthAnalyzer.git"
+                            class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
                     </div>
                 </div>
-            </div> <!-- end of project wrapper -->
+            </div>
 
-            <div class="blog-col section-m">
+            <!-- Project 2: Simple Form with Image Upload and AWS Integration -->
+            <div class="blog-col section-m" data-aos="fade-up">
                 <div class="blog-card">
                     <div class="blog-card-body">
-                        <h5 class="blog-card-title">Financial Literacy website</h6>
-
-                            <p class="blog-card-caption">
-                                <a href="#">Contributors: Admin</a>
-                            </p>
-                            <p>We created a Financial Literacy website for college students, to teach them and give them
-                                financial education. Because financially illiterate can lead to a number of pitfalls,
-                                such
-                                as being more likely to accumulate unsustainable debt burdens, either through poor
-                                spending
-                                decisions or a lack of long-term preparation. This in turn can lead to poor credit,
-                                bankruptcy, housing foreclosure, and other negative consequences.</p>
-
-                    </div>
-                    <div class="blog-card-header">
-                        <img src="assets/imgs/project-1.png" class="blog-card-img" alt="">
-
-                    </div>
-
-                </div>
-                <div class="blog-btm" style="display: flex; margin: auto;">
-                    <div class="blog-btm-bd1">
-                        <b>Programming Languages used- HTML, CSS, Java Script. Front-end framework- Bootstrap</b>
-
-                    </div>
-                    <div class="blog-btm-bd2" style="display: flex; margin: auto;">
-
-                        <a href="https://github.com/Manurajyadav/Code-Clan.git"
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">GitHub <i class="ti-github"></i></a>
-                        <a href="https://code-clan.vercel.app/"
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">Demo
-                            <i class="ti-new-window"></i></a>
-                    </div>
-                </div>
-            </div> <!-- end of project wrapper -->
-
-            <!-- project-wrapper -->
-            <div class="blog-col section-m">
-                <div class="blog-card">
-                    <div class="blog-card-body">
-                        <h5 class="blog-card-title">E-commerce Clone</h6>
-
-                            <p class="blog-card-caption">
-                                <a href="#">Contributors: Admin</a>
-                            </p>
-                            <p>Designed to replicate the intuitive interface and dynamic features of the renowned
-                                e-commerce giant, this repository offers a comprehensive foundation for building your
-                                own thriving online marketplace.</p>
-
-                    </div>
-                    <div class="blog-card-header">
-                        <img src="assets/imgs/project-2.png" class="blog-card-img" alt="">
-
-                    </div>
-
-                </div>
-                <div class="blog-btm" style="display: flex; margin: auto;">
-                    <div class="blog-btm-bd1">
-                        <b>Programming Languages used- HTML, CSS, Java Script.</b>
-
-                    </div>
-                    <div class="blog-btm-bd2" style="display: flex; margin: auto;">
-
-                        <a href="https://github.com/Ketan-Chaudhary/flipkartclone.github.io.git"
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">GitHub <i class="ti-github"></i></a>
-                        <a href="https://flipkartclone-one.vercel.app/"
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">Demo
-                            <i class="ti-new-window"></i></a>
-                    </div>
-                </div>
-            </div> <!-- end of project wrapper -->
-            <!-- project-wrapper -->
-
-            <!-- project-wrapper -->
-            <div class="blog-col section-m">
-                <div class="blog-card">
-                    <div class="blog-card-body">
-                        <h5 class="blog-card-title">HealthCare</h6>
-
-                            <p class="blog-card-caption">
-                                <a href="#">Contributors: Admin</a>
-                            </p>
+                        <h5 class="blog-card-title">Simple Form with Image Upload and AWS Integration</h5>
+                        <!-- <p class="blog-card-caption">
+                            <a href="#">Contributors: Ketan Chaudhary</a>
+                        </p> -->
+                        <p>
+                            This project is a simple web application where users can input form data and upload an
+                            image. The form data, including the image URL, is stored in AWS RDS (MySQL), while the image
+                            itself is stored in an AWS S3 bucket.
+                        </p>
+                        <div class="project-details">
+                            <h6 class="mt-3">Problem Statement</h6>
                             <p>
-                                Our latest frontend project involves creating a seamless online platform for a leading
-                                company specializing in laboratory equipment. With a focus on user experience and
-                                accessibility. Through thoughtful UI/UX design and robust functionality, we're
-                                empowering our client to connect with their customers
+                                Managing form data and image uploads efficiently while ensuring scalability and
+                                reliability is a common challenge. This project integrates AWS services to handle data
+                                storage and retrieval seamlessly.
                             </p>
-
+                            <h6 class="mt-3">Features</h6>
+                            <ul>
+                                <li>Form for collecting input values (e.g., name, description, etc.).</li>
+                                <li>File upload feature to upload an image.</li>
+                                <li>Image stored in AWS S3.</li>
+                                <li>Metadata (including the image URL) stored in AWS RDS (MySQL).</li>
+                                <li>REST API to interact with the database and S3 bucket.</li>
+                                <li>Deployed on an EC2 instance for production.</li>
+                            </ul>
+                            <h6 class="mt-3">Technologies Used</h6>
+                            <div class="tech-icons">
+                                <i class="devicon-react-original colored" title="React.js"></i>
+                                <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+                                <i class="devicon-amazonwebservices-plain colored" title="AWS"></i>
+                                <i class="devicon-mysql-plain colored" title="MySQL"></i>
+                                <i class="devicon-s3-plain colored" title="AWS S3"></i>
+                            </div>
+                            <h6 class="mt-3">Installation</h6>
+                            <pre><code>
+  git clone https://github.com/Ketan-Chaudhary/S3FormUploader.git
+  cd client
+  npm install
+  cd ../server
+  npm install
+  node server.js
+              </code></pre>
+                        </div>
                     </div>
                     <div class="blog-card-header">
-                        <img src="assets/imgs/project-4.png" class="blog-card-img" alt="">
-
+                        <img src="assets/imgs/project-2.png" class="blog-card-img"
+                            alt="Simple Form with AWS Integration">
                     </div>
-
                 </div>
                 <div class="blog-btm" style="display: flex; margin: auto;">
-                    <div class="blog-btm-bd1">
-                        <b>Programming Languages used- HTML, CSS, Java Script.</b>
-
-                    </div>
                     <div class="blog-btm-bd2" style="display: flex; margin: auto;">
-
-                        <a href=https://github.com/Ketan-Chaudhary/HealthCare.git
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">GitHub <i class="ti-github"></i></a>
-                        <a href="https://health-care-pi-orcin.vercel.app/"
-                            class="blog-card-link blog-link-m btn-primary btn mb-2">Demo
-                            <i class="ti-new-window"></i></a>
+                        <a href="https://github.com/Ketan-Chaudhary/S3FormUploader.git"
+                            class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
                     </div>
                 </div>
-            </div> <!-- end of project wrapper -->
+            </div>
 
-            <!-- end of project wrapper -->
-        </div><!-- end of container -->
-    </section><!-- end of project section -->
+            <!-- Project 3: Handwritten Number Recognition System -->
+            <div class="blog-col section-m" data-aos="fade-up">
+                <div class="blog-card">
+                    <div class="blog-card-body">
+                        <h5 class="blog-card-title">Handwritten Number Recognition System</h5>
+                        <!-- <p class="blog-card-caption">
+                            <a href="#">Contributors: Ketan Chaudhary</a>
+                        </p> -->
+                        <p>
+                            This project provides a Flask-based web application for real-time handwritten digit
+                            recognition using a Convolutional Neural Network (CNN) model trained on the MNIST dataset.
+                        </p>
+                        <div class="project-details">
+                            <h6 class="mt-3">Problem Statement</h6>
+                            <p>
+                                Recognizing handwritten digits and numbers is a fundamental challenge in machine
+                                learning. This project aims to provide a solution for real-time digit recognition.
+                            </p>
+                            <h6 class="mt-3">Features</h6>
+                            <ul>
+                                <li>Upload an image of a handwritten digit for real-time recognition.</li>
+                                <li>Detects and recognizes multiple digits from a single image.</li>
+                                <li>Deployed on AWS EC2 for global accessibility.</li>
+                            </ul>
+                            <h6 class="mt-3">Technologies Used</h6>
+                            <div class="tech-icons">
+                                <i class="devicon-flask-original colored" title="Flask"></i>
+                                <i class="devicon-tensorflow-original colored" title="TensorFlow"></i>
+                                <i class="devicon-python-plain colored" title="Python"></i>
+                                <i class="devicon-amazonwebservices-plain colored" title="AWS"></i>
+                            </div>
+                            <h6 class="mt-3">Installation</h6>
+                            <pre><code>
+  git clone https://github.com/Ketan-Chaudhary/DigitSnap.git
+  cd DigitSnap
+  pip install -r requirements.txt
+  python app.py
+              </code></pre>
+                        </div>
+                    </div>
+                    <div class="blog-card-header">
+                        <img src="assets/imgs/project-3.png" class="blog-card-img"
+                            alt="Handwritten Number Recognition System">
+                    </div>
+                </div>
+                <div class="blog-btm" style="display: flex; margin: auto;">
+                    <div class="blog-btm-bd2" style="display: flex; margin: auto;">
+                        <a href="https://github.com/Ketan-Chaudhary/DigitSnap.git"
+                            class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: px-to-rem-converter -->
+            <div class="blog-col section-m" data-aos="fade-up">
+                <div class="blog-card">
+                    <div class="blog-card-body">
+                        <h5 class="blog-card-title">px-to-rem-converter</h5>
+                        <!-- <p class="blog-card-caption">
+                            <a href="#">Contributors: Ketan Chaudhary</a>
+                        </p> -->
+                        <p>
+                            A tool to convert pixel (px) values to rem units in CSS files using PostCSS. This utility
+                            simplifies the process of creating responsive designs by automating the conversion of fixed
+                            pixel values to relative rem units.
+                        </p>
+                        <div class="project-details">
+                            <h6 class="mt-3">Problem Statement</h6>
+                            <p>
+                                Developers often need to convert pixel values to rem units for responsive web design.
+                                This tool automates the process, saving time and reducing errors.
+                            </p>
+                            <h6 class="mt-3">Features</h6>
+                            <ul>
+                                <li>Converts px values to rem units in CSS files.</li>
+                                <li>Supports custom root font sizes.</li>
+                                <li>Can be used via CLI or programmatically.</li>
+                                <li>Configurable using PostCSS plugins.</li>
+                            </ul>
+                            <h6 class="mt-3">Technologies Used</h6>
+                            <div class="tech-icons">
+                                <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+                                <i class="devicon-postcss-plain colored" title="PostCSS"></i>
+                                <i class="devicon-npm-original-wordmark colored" title="npm"></i>
+                            </div>
+                            <h6 class="mt-3">Installation</h6>
+                            <pre><code>
+  npm install -g px-to-rem-converter
+              </code></pre>
+                            <h6 class="mt-3">Usage</h6>
+                            <pre><code>
+  px-to-rem-converter styles.css 16
+              </code></pre>
+                        </div>
+                    </div>
+                    <div class="blog-card-header">
+                        <img src="assets/imgs/project-4.png" class="blog-card-img" alt="px-to-rem-converter">
+                    </div>
+                </div>
+                <div class="blog-btm" style="display: flex; margin: auto;">
+                    <div class="blog-btm-bd2" style="display: flex; margin: auto;">
+                        <a href="https://github.com/Ketan-Chaudhary/px-to-rem-converter.git"
+                            class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Real-Estate Frontend Website -->
+            <div class="blog-col section-m" data-aos="fade-up">
+                <div class="blog-card">
+                    <div class="blog-card-body">
+                        <h5 class="blog-card-title">Real-Estate Frontend Website</h5>
+                        <!-- <p class="blog-card-caption">
+                            <a href="#">Contributors: Ketan Chaudhary</a>
+                        </p> -->
+                        <p>
+                            A fully responsive real-estate frontend website built using React, Framer Motion, and
+                            Tailwind CSS. The website features property listings, detailed property views, and
+                            interactive animations.
+                        </p>
+                        <div class="project-details">
+                            <h6 class="mt-3">Problem Statement</h6>
+                            <p>
+                                Real estate websites often lack interactivity and responsiveness. This project aims to
+                                provide a modern, user-friendly interface for property listings.
+                            </p>
+                            <h6 class="mt-3">Features</h6>
+                            <ul>
+                                <li>Fully responsive design.</li>
+                                <li>Property listings with detailed views.</li>
+                                <li>Interactive animations using Framer Motion.</li>
+                                <li>Built with React and Tailwind CSS.</li>
+                            </ul>
+                            <h6 class="mt-3">Technologies Used</h6>
+                            <div class="tech-icons">
+                                <i class="devicon-react-original colored" title="React.js"></i>
+                                <i class="devicon-tailwindcss-plain colored" title="Tailwind CSS"></i>
+                                <i class="devicon-framer-plain colored" title="Framer Motion"></i>
+                                <i class="devicon-vite-plain colored" title="Vite"></i>
+                            </div>
+                            <h6 class="mt-3">Installation</h6>
+                            <pre><code>
+    git clone https://github.com/Ketan-Chaudhary/Real-Estate.git
+    cd Real-Estate
+    npm install
+    npm run dev
+              </code></pre>
+                        </div>
+                    </div>
+                    <div class="blog-card-header">
+                        <img src="assets/imgs/project-5.png" class="blog-card-img" alt="Real-Estate Frontend Website">
+                    </div>
+                </div>
+                <div class="blog-btm" style="display: flex; margin: auto;">
+                    <div class="blog-btm-bd2" style="display: flex; margin: auto;">
+                        <a href="https://github.com/Ketan-Chaudhary/Real-Estate.git"
+                            class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="blog-card-link blog-link-m btn-primary btn mb-2">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- section -->
@@ -458,6 +613,15 @@
 
     <script src="assets/js/script.js"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration
+            once: true, // Whether animation should happen only once
+        });
+    </script>
 
 </body>
 
