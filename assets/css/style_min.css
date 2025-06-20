@@ -4085,10 +4085,10 @@ p {
 }
 
 #result {
-    margin-top: 2rem;
-    font-size: 1.6rem;
-    font-family: var(--font-family-sans-serif);
-    color: var(--purple)
+    font-size: 1.2rem;
+    color: #695aa6 !important;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 
