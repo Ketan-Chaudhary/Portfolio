@@ -1,6 +1,6 @@
 # Portfolio
 
-This is a personal portfolio website showcasing my skills, projects, and achievements. It was built using HTML, CSS, JavaScript, BootStrap  to create a dynamic and visually appealing online presence.
+This is a personal portfolio website showcasing my skills, projects, and achievements. It was built using HTML, CSS, JavaScript, BootStrap to create a dynamic and visually appealing online presence.
 
 ## Features
 
@@ -15,17 +15,18 @@ This is a personal portfolio website showcasing my skills, projects, and achieve
 - **HTML**
 
 - **CSS**
-  
 - **SCSS**
-  
 - **JavaScript**
 
 - **Bootstrap**
 
 ## Clone the repository to your local machine:
-1. 
-     ```bash
+
+1.  ```bash
     https://github.com/Ketan-Chaudhary/Portfolio.git
-     
+
+    ```
+
 ## Contributing
+
 If you would like to contribute to this project or report any issues, please open an issue or create a pull request.
