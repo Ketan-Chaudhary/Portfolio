@@ -43,6 +43,326 @@
         content="Portfolio of Ketan Chaudhary – Full-Stack Developer with DevOps experience. Explore my projects and skills in JavaScript, React, AWS, Docker, and more.">
     <meta property="twitter:image" content="https://ketanchaudhary.ninja/assets/imgs/project.jpg">
 
+    <!-- Project Card Styles -->
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card.ui-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+        }
+
+        .project-card.ui-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(124, 58, 237, 0.15), 0 10px 10px -5px rgba(124, 58, 237, 0.04);
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .project-card.ui-card .project-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .project-title {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1.3;
+        }
+
+        .featured-badge {
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: white;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
+        }
+
+        .project-description {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag {
+            background: rgba(124, 58, 237, 0.08);
+            color: #7c3aed;
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(124, 58, 237, 0.1);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .project-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .project-btn.btn-outline {
+            background: transparent;
+            color: #4b5563;
+            border: 1px solid #d1d5db;
+        }
+
+        .project-btn.btn-outline:hover {
+            border-color: #7c3aed;
+            color: #7c3aed;
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .project-btn.btn-primary {
+            background: #7c3aed;
+            color: white;
+            border: 1px solid #7c3aed;
+        }
+
+        .project-btn.btn-primary:hover {
+            background: #6d28d9;
+            border-color: #6d28d9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(124, 58, 237, 0.25);
+        }
+
+        .btn-load-more {
+            background: transparent;
+            color: #7c3aed;
+            border: 2px solid #7c3aed;
+            padding: 0.8rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-load-more:hover:not(:disabled) {
+            background: #7c3aed;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3), 0 4px 6px -2px rgba(124, 58, 237, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .btn-load-more:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Experience Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #e5e7eb;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid #7c3aed;
+            top: 24px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-left {
+            left: 0;
+        }
+
+        .timeline-right {
+            left: 50%;
+        }
+
+        .timeline-left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 28px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #fff;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .timeline-right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 28px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .timeline-right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: white;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f3f4f6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+        }
+
+        .timeline-date {
+            color: #7c3aed;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .timeline-list {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .timeline-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .timeline-left::after, .timeline-right::after {
+                left: 21px;
+            }
+            
+            .timeline-right {
+                left: 0%;
+            }
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -60,6 +380,9 @@
                 </li>
                 <li class="item">
                     <a class="link" href="#tech">Skills</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#experience">Experience</a>
                 </li>
                 <li class="item">
                     <a class="link" href="#projects">Projects</a>
@@ -84,7 +407,7 @@
                 <span class="up">HI!</span>
                 <span class="down" style="width: max-content;">I am Ketan Chaudhary</span>
             </h1>
-            <p class="header-subtitle">Software Developer</p>
+            <p class="header-subtitle">DevOps & Platform Engineer</p>
             <button class="btn btn-primary" onclick="scrollToSection('projects')">Visit My Works</button>
 
         </div>
@@ -103,26 +426,21 @@
                     <p class="section-subtitle">Who Am I ?</p>
                     <h2 class="section-title mb-3">About Me</h2>
                     <div class="social-links text-right m-auto ml-sm-auto" style="font-size: 2rem;">
-                        <a href="https://github.com/Ketan-Chaudhary" class="link"><i class="ti-github"></i></a>
-                        <a href="https://twitter.com/KETAN_POONIA_" class="link"><i class="ti-twitter-alt"></i></a>
-                        <a href="https://www.linkedin.com/in/ketan-chaudhary-poonia/" class="link"><i
+                        <a href="https://github.com/Ketan-Chaudhary" class="link" target="_blank" rel="noopener noreferrer"><i class="ti-github"></i></a>
+                        <a href="https://twitter.com/KETAN_POONIA_" class="link" target="_blank" rel="noopener noreferrer"><i class="ti-twitter-alt"></i></a>
+                        <a href="https://www.linkedin.com/in/ketan-chaudhary-poonia/" class="link" target="_blank" rel="noopener noreferrer"><i
                                 class="ti-linkedin"></i></a>
                     </div>
                     <p>
-                        Hi, I’m Ketan — a passionate developer and DevOps enthusiast who loves bringing ideas to life
-                        through clean, scalable code. I specialize in building full-stack web applications and
-                        cloud-native solutions using technologies like JavaScript, React.js, Node.js, Docker, Terraform,
-                        and AWS. I’m also comfortable working with languages like C, C++, Java, Python, and GoLang.
-                        <br> With hands-on experience in automating deployments, managing infrastructure, and
-                        containerizing apps, I enjoy bridging the gap between development and operations to deliver
-                        reliable, production-ready systems.
-                        I’m always eager to learn, experiment, and grow — both as a developer and as a problem solver.
-
-
+                        Hi, I’m Ketan — a dedicated DevOps and Platform Engineer with a strong focus on building and managing scalable cloud infrastructure, primarily on AWS. I specialize in Infrastructure as Code using Terraform, CI/CD automation, containerized applications, and serverless architectures.
+                        <br><br>
+                        With professional experience spanning companies like Cerebrone.ai, Underpin Services, and Qtiminds, I have successfully designed secure private networking architectures, orchestrated containerized workloads on AWS ECS, and implemented zero-downtime deployment strategies. My technical expertise covers tools like Docker, Jenkins, GitHub Actions, and monitoring systems like Prometheus and Grafana.
+                        <br><br>
+                        I am deeply passionate about bridging the gap between development and operations, reducing system downtime, and improving operational efficiency to deliver highly reliable, production-ready cloud environments.
                     </p>
                     <button class="btn-rounded btn btn-outline-primary mt-4"> <a
-                            href="https://drive.google.com/file/d/1fBGBevahsEs-NyGZQM9dgBZSyNX0EZyS/view?usp=sharing"
-                            target="_blank">Download CV</a> </button>
+                            href="Ketan-Chaudhary-Resume.pdf"
+                            target="_blank" download>Download CV</a> </button>
                 </div>
             </div><!-- end of about wrapper -->
         </div><!-- end of container -->
@@ -140,49 +458,64 @@
 
             <div class="tech-categories">
 
-                <!-- Languages -->
+                <!-- Cloud Infrastructure -->
                 <div class="tech-category">
-                    <h3 class="category-title">Languages</h3>
+                    <h3 class="category-title">Cloud Infrastructure</h3>
                     <div class="tech-items">
-                        <div class="tech-item"><i class="devicon-python-plain colored tech-icon"></i><span
-                                class="tech-name">Python</span></div>
-                        <div class="tech-item"><i class="devicon-java-plain colored tech-icon"></i><span
-                                class="tech-name">Java</span></div>
-                        <div class="tech-item"><i class="devicon-javascript-plain colored tech-icon"></i><span
-                                class="tech-name">JavaScript</span></div>
-                        <div class="tech-item"><i class="devicon-go-plain colored tech-icon"></i>
-                            <span class="tech-name">GoLang</span>
+                        <div class="tech-item"><i class="devicon-amazonwebservices-original colored tech-icon"></i><span class="tech-name">AWS</span></div>
+                        <div class="tech-item"><i class="fas fa-server tech-icon" style="color: #FF9900;"></i><span class="tech-name">EC2 & ECS</span></div>
+                        <div class="tech-item"><i class="fas fa-database tech-icon" style="color: #FF9900;"></i><span class="tech-name">RDS & S3</span></div>
+                        <div class="tech-item"><i class="fas fa-network-wired tech-icon" style="color: #FF9900;"></i><span class="tech-name">VPC & Route53</span></div>
+                        <div class="tech-item"><i class="fas fa-bolt tech-icon" style="color: #FF9900;"></i><span class="tech-name">Lambda</span></div>
+                        <div class="tech-item"><i class="fas fa-key tech-icon" style="color: #FF9900;"></i><span class="tech-name">IAM & Secrets</span></div>
+                    </div>
+                </div>
+
+                <!-- DevOps & CI/CD -->
+                <div class="tech-category">
+                    <h3 class="category-title">DevOps & CI/CD</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="devicon-terraform-plain colored tech-icon"></i><span class="tech-name">Terraform</span></div>
+                        <div class="tech-item"><i class="devicon-docker-plain colored tech-icon"></i><span class="tech-name">Docker & Swarm</span></div>
+                        <div class="tech-item"><i class="devicon-jenkins-plain colored tech-icon"></i><span class="tech-name">Jenkins</span></div>
+                        <div class="tech-item">
+                            <img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="GitHub Actions" class="tech-icon-svg" />
+                            <span class="tech-name">GitHub Actions</span>
                         </div>
-                        <div class="tech-item"><i class="devicon-cplusplus-plain colored tech-icon"></i><span
-                                class="tech-name">C / C++</span></div>
+                        <div class="tech-item"><i class="devicon-amazonwebservices-original colored tech-icon"></i><span class="tech-name">CodePipeline</span></div>
                     </div>
                 </div>
 
-                <!-- Frontend -->
+                <!-- Languages & Scripting -->
                 <div class="tech-category">
-                    <h3 class="category-title">Frontend</h3>
+                    <h3 class="category-title">Languages & Scripting</h3>
                     <div class="tech-items">
-                        <div class="tech-item"><i class="devicon-react-original colored tech-icon"></i><span
-                                class="tech-name">React.js</span></div>
-                        <div class="tech-item"><i class="devicon-tailwindcss-plain colored tech-icon"></i><span
-                                class="tech-name">Tailwind CSS</span></div>
-                        <div class="tech-item"><i class="devicon-html5-plain colored tech-icon"></i><span
-                                class="tech-name">HTML</span></div>
-                        <div class="tech-item"><i class="devicon-css3-plain colored tech-icon"></i><span
-                                class="tech-name">CSS</span></div>
+                        <div class="tech-item"><i class="devicon-go-plain colored tech-icon"></i><span class="tech-name">GoLang</span></div>
+                        <div class="tech-item"><i class="devicon-python-plain colored tech-icon"></i><span class="tech-name">Python</span></div>
+                        <div class="tech-item"><i class="devicon-bash-plain colored tech-icon"></i><span class="tech-name">Bash Scripting</span></div>
+                        <div class="tech-item"><i class="devicon-javascript-plain colored tech-icon"></i><span class="tech-name">JavaScript</span></div>
+                        <div class="tech-item"><i class="devicon-java-plain colored tech-icon"></i><span class="tech-name">Java</span></div>
                     </div>
                 </div>
 
-                <!-- Backend -->
+                <!-- Monitoring & Observability -->
                 <div class="tech-category">
-                    <h3 class="category-title">Backend</h3>
+                    <h3 class="category-title">Monitoring</h3>
                     <div class="tech-items">
-                        <div class="tech-item"><i class="devicon-nodejs-plain colored tech-icon"></i><span
-                                class="tech-name">Node.js</span></div>
-                        <div class="tech-item"><i class="devicon-express-original colored tech-icon"></i><span
-                                class="tech-name">Express.js</span></div>
-                        <div class="tech-item"><i class="devicon-spring-plain colored tech-icon"></i><span
-                                class="tech-name">Spring Boot</span></div>
+                        <div class="tech-item"><i class="devicon-prometheus-original colored tech-icon"></i><span class="tech-name">Prometheus</span></div>
+                        <div class="tech-item"><i class="devicon-grafana-original colored tech-icon"></i><span class="tech-name">Grafana</span></div>
+                        <div class="tech-item"><i class="devicon-amazonwebservices-original colored tech-icon"></i><span class="tech-name">CloudWatch</span></div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="tech-category">
+                    <h3 class="category-title">Web Development</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="devicon-react-original colored tech-icon"></i><span class="tech-name">React.js</span></div>
+                        <div class="tech-item"><i class="devicon-nodejs-plain colored tech-icon"></i><span class="tech-name">Node.js</span></div>
+                        <div class="tech-item"><i class="devicon-express-original colored tech-icon"></i><span class="tech-name">Express.js</span></div>
+                        <div class="tech-item"><i class="devicon-tailwindcss-plain colored tech-icon"></i><span class="tech-name">Tailwind CSS</span></div>
                     </div>
                 </div>
 
@@ -190,49 +523,9 @@
                 <div class="tech-category">
                     <h3 class="category-title">Databases</h3>
                     <div class="tech-items">
-                        <div class="tech-item"><i class="devicon-mongodb-plain colored tech-icon"></i><span
-                                class="tech-name">MongoDB</span></div>
-                        <div class="tech-item"><i class="devicon-postgresql-plain colored tech-icon"></i><span
-                                class="tech-name">PostgreSQL</span></div>
-                        <div class="tech-item"><i class="devicon-mysql-plain colored tech-icon"></i><span
-                                class="tech-name">MySQL</span></div>
-                    </div>
-                </div>
-
-                <!-- DevOps & Cloud -->
-                <div class="tech-category">
-                    <h3 class="category-title">Cloud & DevOps</h3>
-                    <div class="tech-items">
-                        <div class="tech-item"><i class="devicon-amazonwebservices-original colored tech-icon"></i><span
-                                class="tech-name">AWS</span></div>
-                        <div class="tech-item"><i class="devicon-docker-plain colored tech-icon"></i><span
-                                class="tech-name">Docker</span></div>
-                        <div class="tech-item"><i class="devicon-terraform-plain colored tech-icon"></i><span
-                                class="tech-name">Terraform</span></div>
-                        <div class="tech-item"><i class="devicon-jenkins-plain colored tech-icon"></i><span
-                                class="tech-name">Jenkins</span></div>
-                        <div class="tech-item"><i class="devicon-bash-plain colored tech-icon"></i><span
-                                class="tech-name">Shell Scripting</span></div>
-                        <div class="tech-item">
-                            <img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="GitHub Actions"
-                                class="tech-icon-svg" />
-                            <span class="tech-name">GitHub Actions</span>
-                        </div>
-                        <div class="tech-item"><i class="devicon-ansible-plain colored tech-icon"></i><span
-                                class="tech-name">Ansible</span></div>
-                    </div>
-                </div>
-
-                <!-- Monitoring -->
-                <div class="tech-category">
-                    <h3 class="category-title">Monitoring & Observability</h3>
-                    <div class="tech-items">
-                        <div class="tech-item"><i class="devicon-grafana-original colored tech-icon"></i><span
-                                class="tech-name">Grafana</span></div>
-                        <div class="tech-item"><i class="devicon-amazonwebservices-original colored tech-icon"></i><span
-                                class="tech-name">CloudWatch</span></div>
-                        <div class="tech-item"><i class="devicon-nodejs-plain colored tech-icon"></i><span
-                                class="tech-name">PM2</span></div>
+                        <div class="tech-item"><i class="devicon-postgresql-plain colored tech-icon"></i><span class="tech-name">PostgreSQL</span></div>
+                        <div class="tech-item"><i class="devicon-mysql-plain colored tech-icon"></i><span class="tech-name">MySQL</span></div>
+                        <div class="tech-item"><i class="devicon-mongodb-plain colored tech-icon"></i><span class="tech-name">MongoDB</span></div>
                     </div>
                 </div>
 
@@ -245,6 +538,64 @@
     <!-- end of tech section -->
 
 
+    <!-- Experience section -->
+    <section id="experience" class="section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-description">
+                    My professional journey and work history in DevOps and Cloud Engineering.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item timeline-left" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jan 2026 – Present</span>
+                        <h3 class="timeline-role">DevOps Engineer</h3>
+                        <p class="timeline-company">Cerebrone.ai | Remote, USA</p>
+                        <ul class="timeline-list">
+                            <li>Managed AWS Infrastructure Using Terraform and Terragrunt to standardize provisioning.</li>
+                            <li>Implemented Secure Private Networking with VPC Endpoints and AWS PrivateLink.</li>
+                            <li>Leveraged Serverless Integration Services with Lambda and SQS for async processing.</li>
+                            <li>Enabled Cross-Service Analytics Workflows via OpenSearch and QuickSight.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="timeline-item timeline-right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jul 2025 – Sep 2025</span>
+                        <h3 class="timeline-role">DevOps Engineer Trainee</h3>
+                        <p class="timeline-company">Underpin Services | New Delhi, India</p>
+                        <ul class="timeline-list">
+                            <li>Architected End-to-End AWS Infrastructure across environments.</li>
+                            <li>Orchestrated Containerized Workloads on ECS Fargate with ALBs and Auto-scaling.</li>
+                            <li>Implemented CI/CD Pipelines via GitHub Actions and Blue-Green Deployments.</li>
+                            <li>Configured hybrid Jenkins runners for compute-intensive Unity builds.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="timeline-item timeline-left" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jan 2025 – Jun 2025</span>
+                        <h3 class="timeline-role">DevOps Engineer Intern</h3>
+                        <p class="timeline-company">Qtiminds Pvt. Ltd. | Hyderabad, India</p>
+                        <ul class="timeline-list">
+                            <li>Deployed Full Stack Web Applications on EC2 with Nginx as reverse proxy.</li>
+                            <li>Managed Node.js application processes using PM2 daemon services for high availability.</li>
+                            <li>Designed Automated CI/CD Pipelines using GitHub Actions for seamless updates.</li>
+                            <li>Configured backend resources including AWS RDS and Redis caching systems.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Project section -->
@@ -258,16 +609,13 @@
                 </p>
             </div>
 
-            <!-- Project Filters -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="featured">Featured</button>
-                <button class="filter-btn" data-filter="other">Other</button>
-            </div>
-
             <!-- Projects Grid -->
             <div class="projects-grid" id="projects-grid">
                 <!-- Projects will be dynamically inserted here -->
+            </div>
+
+            <div class="text-center mt-5" id="load-more-container" style="padding-bottom: 2rem;">
+                <button id="load-more-btn" class="btn-load-more">Load More Projects</button>
             </div>
         </div>
     </section>
@@ -332,9 +680,9 @@
 
             </p>
             <div class="social-links text-right m-auto ml-sm-auto" id="social-rp">
-                <a href="https://github.com/Ketan-Chaudhary" class="link"><i class="ti-github"></i></a>
-                <a href="https://twitter.com/KETAN_POONIA_" class="link"><i class="ti-twitter-alt"></i></a>
-                <a href="https://www.linkedin.com/in/ketan-chaudhary-poonia/" class="link"><i
+                <a href="https://github.com/Ketan-Chaudhary" class="link" target="_blank" rel="noopener noreferrer"><i class="ti-github"></i></a>
+                <a href="https://twitter.com/KETAN_POONIA_" class="link" target="_blank" rel="noopener noreferrer"><i class="ti-twitter-alt"></i></a>
+                <a href="https://www.linkedin.com/in/ketan-chaudhary-poonia/" class="link" target="_blank" rel="noopener noreferrer"><i
                         class="ti-linkedin"></i></a>
             </div>
         </footer>
@@ -347,7 +695,7 @@
     <!-- bootstrap 3 -->
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
-
+    <script src="assets/js/projects.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
 
